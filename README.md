@@ -22,12 +22,17 @@ Todas las personas y fotos son **sintéticas**: las ha generado una IA y no corr
 | `img/fotos/` |  Un álbum con 100 fotos de muestra (JPEG). Los nombres son aleatorios y **no** dan pistas del contenido. |
 | `img/identidades/` | Una imagen de enrolamiento (retrato) por cada uno de los 25 personajes: `nombre_apellido.jpg`. |
 | `img/identidades_todos.jpg` | Mosaico con los 25 personajes y su nombre. |
+| `img/album_ejemplos.jpg` | Mosaico con 16 fotos de ejemplo del álbum. |
 | `notebooks/` | Tres cuadernos de ejemplo, listos para Google Colab. |
 
-![Mosaico de fotos del álbum](img/identidades_todos.jpg)
+![Los 25 personajes del álbum](img/identidades_todos.jpg)
 
 
 Cada foto puede tener desde ninguna persona hasta seis personajes, además de figurantes anónimos en el fondo que no son ninguno de los 25. Algunas fotos se hicieron con un teléfono móvil y otras con una cámara; solo una parte lleva GPS.
+
+Algunos ejemplos de la variedad de fotos del álbum: laboratorio, pósteres y pasillos de congreso, presentaciones y reuniones, comidas y cumpleaños familiares, selfis en interior y exterior, una exposición y también fotos sin nadie (una sala de conferencias vacía, un póster solo, una tarta en la mesa):
+
+![Ejemplos de fotos del álbum](img/album_ejemplos.jpg)
 
 ## Cuadernos de partida
 
@@ -44,7 +49,7 @@ Cada cuaderno instala lo que necesita y clona este repositorio, así que deberí
 ### 1. Búsqueda por contenido con CLIP (6.0 puntos)
 
 - Calculad el embedding CLIP de las 100 fotos una sola vez y guardadlo. Lo más recomendado es usar una base de datos vectorial como qdrant. Esta tarea se puede realizar en Colab, para acelerar el proceso ya que se puede usar una GPU.
-- Diseñad una web dinámica que reciba una consulta de texto y devuelva las n fotos más similares. PAra ello tendrá que calcular el embedding del texto de la consulta y buscar en la base de datos vectorial. 
+- Diseñad una web dinámica que reciba una consulta de texto y devuelva las n fotos más similares. Para ello tendrá que calcular el embedding del texto de la consulta y buscar en la base de datos vectorial. 
 - Probad varias consultas y comentad cuándo funciona bien y cuándo falla. Algunas ideas para explorar:
   - El modelo de ejemplo está entrenado con textos en inglés: ¿qué pasa si preguntáis en español? ¿Hay modelos multilingües?
   - ¿Cuántos resultados devolver? ¿Un número fijo o un umbral de similitud?
